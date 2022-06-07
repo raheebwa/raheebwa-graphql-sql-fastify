@@ -25,3 +25,39 @@ All the libraries mentioned above are the ones we will need to install to create
 * sequelize-cli - for generating migrations
 * nodemon - for running our project
 * dotenv - for storing environment variables
+
+## Database Setup
+
+1. Copy `src/config/database.example.json` to `src/config/database.json` and change the details below
+
+```json
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "database_development",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
+```
+
+2. Generate your first migration such e.g. `npx sequelize-cli model:generate --name User --attributes name:string,email:string,password:string`
+
+3. Run the migration with `npx sequelize-cli db:migrate`
+
+See [this](https://sequelize.org/docs/v6/other-topics/migrations/) for details on how to run migrations
