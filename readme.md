@@ -1,0 +1,1 @@
+# Template for backend based on SQL, Fastify Server and GraphQL`
