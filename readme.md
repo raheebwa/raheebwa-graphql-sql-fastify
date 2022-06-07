@@ -28,32 +28,16 @@ All the libraries mentioned above are the ones we will need to install to create
 
 ## Database Setup
 
-1. Copy `src/config/database.example.json` to `src/config/database.json` and change the details below
+1. Copy `.env.example` to `.env` and change the details below
 
 ```json
-{
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
-}
+  # Database
+  DEV_DB_USERNAME=root
+  DEV_DB_PASSWORD=
+  DEV_DB_HOST=127.0.0.1
+  DEV_DB_PORT=3306
+  DEV_DB_NAME=template_database_development
+  DEV_DB_DIALECT=mariadb
 ```
 
 2. Generate your first migration such e.g. `npx sequelize-cli model:generate --name User --attributes name:string,email:string,password:string`
